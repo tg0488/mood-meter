@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import TeamHome from '../views/TeamHome'
 import Journal from '../views/Journal'
 import PersonalLog from '../views/PersonalLog'
+import TeamHome from '../views/Team/TeamHome'
+import TeamResponses from '../views/Team/TeamResponses'
 
 Vue.use(VueRouter)
 
@@ -14,11 +15,6 @@ const routes = [
     component: Home
   },
   {
-    path: '/TeamHome',
-    name: 'TeamHome',
-    component: TeamHome
-  },
-  {
       path: '/Journal',
       name: 'Journal',
       component: Journal
@@ -27,6 +23,16 @@ const routes = [
       path: '/PersonalLog',
       name: 'PersonalLog',
       component: PersonalLog
+  },
+  {
+      path: '/TeamHome',
+      name: 'TeamHome',
+      component: TeamHome
+  },
+  {
+    path: '/TeamResponses',
+    name: 'TeamResponses',
+    component: TeamResponses
   }
 ]
 
