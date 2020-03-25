@@ -5,35 +5,47 @@ import Journal from '../views/Journal'
 import PersonalLog from '../views/PersonalLog'
 import TeamHome from '../views/Team/TeamHome'
 import TeamResponses from '../views/Team/TeamResponses'
+import JoinTeam from '../views/Team/JoinTeam'
+import CreateTeam from '../views/Team/CreateTeam'
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-      path: '/Journal',
-      name: 'Journal',
-      component: Journal
-  },
-  {
-      path: '/PersonalLog',
-      name: 'PersonalLog',
-      component: PersonalLog
-  },
-  {
-      path: '/TeamHome',
-      name: 'TeamHome',
-      component: TeamHome
-  },
-  {
-    path: '/TeamResponses',
-    name: 'TeamResponses',
-    component: TeamResponses
-  }
+    {
+        path: '/',
+        name: 'Home',
+        component: Home
+    },
+    {
+        path: '/Journal',
+        name: 'Journal',
+        component: Journal
+    },
+    {
+        path: '/PersonalLog',
+        name: 'PersonalLog',
+        component: PersonalLog
+    },
+    {
+        path: '/TeamHome',
+        name: 'TeamHome',
+        component: TeamHome
+    },
+    {
+        path: '/TeamResponses',
+        name: 'TeamResponses',
+        component: TeamResponses
+    },
+    {
+        path: '/JoinTeam',
+        name: 'JoinTeam',
+        component: JoinTeam
+    },
+    {
+        path: '/CreateTeam',
+        name: 'CreateTeam',
+        component: CreateTeam
+    }
 ]
 
 const router = new VueRouter({

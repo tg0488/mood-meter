@@ -1,24 +1,21 @@
 <template>
     <v-container>
         <v-layout>
-            <v-row>
-                <v-col cols="12"><h1>Team Responses</h1></v-col>
-            </v-row>
-        </v-layout>
-        <v-layout>
-            <v-row>
-                <v-col cols="12">
-                    <v-expansion-panels v-for="(item,i) in 5" :key="i" inset class="py-1">
-                        <v-expansion-panel>
-                            <v-expansion-panel-header>Team {{item}}</v-expansion-panel-header>
-                            <v-expansion-panel-content>Team member response</v-expansion-panel-content>
-                        </v-expansion-panel>
-                    </v-expansion-panels>
+            <v-row style="width: 100%">
+                <v-col cols="6">
+                    <v-btn class="team_join_create_buttons" outlined large to="JoinTeam">Join Team</v-btn>
+                </v-col>
+                <v-col cols="6">
+                    <v-btn class="team_join_create_buttons" outlined large>Create Team</v-btn>
                 </v-col>
             </v-row>
         </v-layout>
         <v-layout>
-            <v-row>
+            <v-row style="width: 100%">
+            </v-row>
+        </v-layout>
+        <v-layout>
+            <v-row style="width: 100%">
                 <v-col cols="2"></v-col>
                 <v-col cols="8">
                     <v-btn class="team_share_buttons" outlined rounded x-large to="TeamHome">Back</v-btn>
@@ -31,11 +28,14 @@
 
 <script>
     export default {
-        name: "TeamResponses"
+        name: "CreateTeam"
     }
 </script>
 
 <style scoped>
+    .team_join_create_buttons{
+        width: 100%;
+    }
     .team_share_buttons{
         width: 90%;
         margin-left: 5%;

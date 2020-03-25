@@ -3,47 +3,32 @@
     <v-layout>
       <v-row style="width: 100%">
         <v-col cols="6">
-          <v-btn class="team_join_create_buttons" outlined large>Join Team</v-btn>
+          <v-btn class="team_join_create_buttons" outlined large to="JoinTeam">Join Team</v-btn>
         </v-col>
         <v-col cols="6">
-          <v-btn class="team_join_create_buttons" outlined large>Create Team</v-btn>
+          <v-btn class="team_join_create_buttons" outlined large to="CreateTeam">Create Team</v-btn>
         </v-col>
       </v-row>
     </v-layout>
     <v-layout>
-      <v-row style="width: 100%">
-        <v-col cols="5">
-          <v-select outlined :items="teams"></v-select>
-        </v-col>
-      </v-row>
-    </v-layout>
-    <v-layout>
-      <v-row>
-        <v-col cols="12">
-          <v-btn class="team_share_buttons" outlined x-large>Share A Word</v-btn>
-        </v-col>
-      </v-row>
-    </v-layout>
-    <v-layout>
-      <v-row>
-        <v-col cols="12">
-          <v-btn class="team_share_buttons" outlined x-large>Share A Color</v-btn>
-        </v-col>
-      </v-row>
-    </v-layout>
-    <v-layout>
-      <v-row>
-        <v-col cols="12">
-          <v-btn class="team_share_buttons" outlined x-large>Share A Journal</v-btn>
-        </v-col>
-      </v-row>
-    </v-layout>
-    <v-layout>
-      <v-row>
-        <v-col cols="12">
-          <v-btn class="team_share_buttons" outlined x-large to="TeamResponses">View Team Responses</v-btn>
-        </v-col>
-      </v-row>
+        <v-row wrap style="width: 100%">
+          <v-col cols="5">
+            <v-select outlined :items="teams"></v-select>
+          </v-col>
+          <v-col cols="7"></v-col>
+          <v-col cols="12">
+            <v-btn class="team_share_buttons" outlined x-large>Share A Word</v-btn>
+          </v-col>
+          <v-col cols="12">
+            <v-btn class="team_share_buttons" outlined x-large>Share A Color</v-btn>
+          </v-col>
+          <v-col cols="12">
+            <v-btn class="team_share_buttons" outlined x-large>Share A Journal</v-btn>
+          </v-col>
+          <v-col cols="12">
+            <v-btn class="team_share_buttons" outlined x-large to="TeamResponses">View Team Responses</v-btn>
+          </v-col>
+        </v-row>
     </v-layout>
     <v-layout>
       <v-row>
@@ -54,15 +39,20 @@
         <v-col cols="2"></v-col>
       </v-row>
     </v-layout>
+
   </v-container>
 </template>
 
 <script>
     export default {
         name: "TeamHome",
+        components: {
+        },
         data (){
           return{
-              teams: ['Team 1', 'Team 2', 'Team 3', 'Team 4', 'Team 5']
+              teams: ['Team 1', 'Team 2', 'Team 3', 'Team 4', 'Team 5'],
+              overlayValue: true,
+              overlayAbsolute: true
           }
         }
     }
