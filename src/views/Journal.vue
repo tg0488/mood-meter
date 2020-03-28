@@ -1,7 +1,11 @@
 <template>
     <v-container>
         <v-layout>
-            <h1>Journal<br></h1>
+            <v-row>
+                <v-col>
+            <h1>Journal</h1>
+                </v-col>
+            <v-col cols="12">
             <v-tabs
             color="green"
             grow
@@ -28,6 +32,13 @@
                 </v-card>
             </v-tab-item>
             </v-tabs>
+                </v-col>
+            <v-col cols="12">
+            <v-btn large outlined to="/">Home</v-btn>
+            <v-btn large outlined to="/">Skip</v-btn>
+            <v-btn large outlined to="/">Next</v-btn>
+            </v-col>
+            </v-row>
         </v-layout>
     </v-container>
 </template>
