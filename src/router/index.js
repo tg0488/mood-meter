@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Journal from '../views/Journal'
+import WrittenJournal from '../views/WrittenJournal'
 import PersonalLog from '../views/PersonalLog'
 import TeamHome from '../views/Team/TeamHome'
 import TeamResponses from '../views/Team/TeamResponses'
@@ -20,6 +21,11 @@ const routes = [
         path: '/Journal',
         name: 'Journal',
         component: Journal
+    },
+    {
+        path: '/WrittenJournal',
+        name: 'WrittenJournal',
+        component: WrittenJournal
     },
     {
         path: '/PersonalLog',
@@ -55,3 +61,4 @@ const router = new VueRouter({
 })
 
 export default router
+
