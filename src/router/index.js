@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import TeamHome from '../views/TeamHome'
 import Journal from '../views/Journal'
 import PersonalLog from '../views/PersonalLog'
+import PersonalEntry from '../views/PersonalEntry'
 
 Vue.use(VueRouter)
 
