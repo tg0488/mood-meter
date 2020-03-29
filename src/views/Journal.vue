@@ -14,7 +14,7 @@
               Word Chart
             </v-tab>
             <v-tab-item>
-                  <v-card flat>
+                  <v-card class="ma-1" flat>
                         <v-row class="button_row" no-gutters>
                             <v-row class="button_row" no-gutters>
                                 <v-col cols="6">
@@ -170,15 +170,15 @@
 </template>
 
 <script>
-export default {
-  name: "Journal"
-};
+    export default {
+        name: "Journal"
+    };
 </script>
 
 <style scoped>
-v-btn {
-    width: fit-content;
-}
+    v-btn {
+        width: fit-content;
+    }
     .button_row{
         width: 100%;
     }
