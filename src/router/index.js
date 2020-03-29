@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import TeamHome from '../views/TeamHome'
 import Journal from '../views/Journal'
 import PersonalLog from '../views/PersonalLog'
+import WrittenJournal from '../views/WrittenJournal'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
       path: '/PersonalLog',
       name: 'PersonalLog',
       component: PersonalLog
+  },
+  {
+    path: '/WrittenJournal',
+    name: 'WrittenJournal',
+    component: WrittenJournal
   }
 ]
 
