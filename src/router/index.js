@@ -27,6 +27,11 @@ const routes = [
       path: '/PersonalLog',
       name: 'PersonalLog',
       component: PersonalLog
+  },
+  {
+      path: '/PersonalEntry',
+      name: 'PersonalEntry',
+      component: PersonalEntry
   }
 ]
 
