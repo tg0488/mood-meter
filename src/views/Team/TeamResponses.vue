@@ -10,7 +10,7 @@
                 <v-col cols="12">
                     <v-expansion-panels v-for="(item,i) in 5" :key="i" inset class="py-1">
                         <v-expansion-panel>
-                            <v-expansion-panel-header style="border: thick black">Team Member {{item}}</v-expansion-panel-header>
+                            <v-expansion-panel-header>Team Member {{item}}</v-expansion-panel-header>
                             <v-expansion-panel-content>Team member response</v-expansion-panel-content>
                         </v-expansion-panel>
                     </v-expansion-panels>
