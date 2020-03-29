@@ -148,9 +148,15 @@
           </v-tabs>
         </v-col>
         <v-col cols="12">
-          <v-btn width="33%" large outlined to="/">Back</v-btn>
-          <v-btn width="33%" large outlined to="/">Skip Journal</v-btn>
-          <v-btn width="33%" large outlined to="/WrittenJournal">Next</v-btn>
+            <v-row>
+                <v-col cols="6">
+                    <v-btn class="direction_buttons_left" large outlined to="/">Back</v-btn>
+                </v-col>
+          <!--<v-btn width="33%" large outlined to="/">Skip Journal</v-btn>-->
+                <v-col cols="6">
+                    <v-btn class="direction_buttons_right" large outlined to="/WrittenJournal">Next</v-btn>
+                </v-col>
+            </v-row>
         </v-col>
       </v-row>
     </v-layout>
@@ -167,4 +173,15 @@ export default {
 v-btn {
     width: fit-content;
 }
+    .direction_buttons_left{
+        width: 85%;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+    .direction_buttons_right{
+        width: 85%;
+        margin-left: 5%;
+        margin-right: 10%;
+    }
+
 </style>
