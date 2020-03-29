@@ -24,12 +24,13 @@
             </v-row>
         </v-layout>
         <v-layout>
-            <v-row style="width: 100%">
-                <v-col cols="2"></v-col>
-                <v-col cols="8">
-                    <v-btn class="team_share_buttons" outlined rounded x-large to="TeamHome">Back</v-btn>
+            <v-row style="width: 100%;">
+                <v-col cols="6">
+                    <v-btn class="direction_buttons_left" large outlined to="/TeamHome">Back</v-btn>
                 </v-col>
-                <v-col cols="2"></v-col>
+                <v-col cols="6">
+                    <v-btn class="direction_buttons_right" large outlined to="/TeamHome">Join</v-btn>
+                </v-col>
             </v-row>
         </v-layout>
     </v-container>
@@ -49,5 +50,15 @@
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
+    }
+    .direction_buttons_left{
+        width: 85%;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+    .direction_buttons_right{
+        width: 85%;
+        margin-left: 5%;
+        margin-right: 10%;
     }
 </style>
