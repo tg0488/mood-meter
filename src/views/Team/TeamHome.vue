@@ -17,13 +17,13 @@
           </v-col>
           <v-col cols="7"></v-col>
           <v-col cols="12">
-            <v-btn class="team_share_buttons" outlined x-large>Share A Word</v-btn>
+            <v-btn class="team_share_buttons" outlined x-large to="/Journal">Share A Word</v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn class="team_share_buttons" outlined x-large>Share A Color</v-btn>
+            <v-btn class="team_share_buttons" outlined x-large to="/Journal">Share A Color</v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn class="team_share_buttons" outlined x-large>Share A Journal</v-btn>
+            <v-btn class="team_share_buttons" outlined x-large to="/WrittenJournal">Share A Journal</v-btn>
           </v-col>
           <v-col cols="12">
             <v-btn class="team_share_buttons" outlined x-large to="TeamResponses">View Team Responses</v-btn>
