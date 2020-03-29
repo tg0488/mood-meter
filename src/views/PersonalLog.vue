@@ -2,264 +2,6 @@
   <v-row>
     <v-col
       sm="12"
-      lg="3"
-      class="mb-4 controls"
-    >
-      <v-btn
-        fab
-        small
-        absolute
-        left
-        color="primary"
-        @click="$refs.calendar.prev()"
-      >
-        <v-icon dark>mdi-chevron-left</v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        small
-        absolute
-        right
-        color="primary"
-        @click="$refs.calendar.next()"
-      >
-        <v-icon dark>mdi-chevron-right</v-icon>
-      </v-btn>
-      <br><br><br>
-      <v-select
-        v-model="type"
-        :items="typeOptions"
-        label="Type"
-        hide-details
-        outlined
-        dense
-      ></v-select>
-      <v-checkbox
-        v-model="dark"
-        label="Dark"
-        hide-details
-      ></v-checkbox>
-      <v-checkbox
-        v-model="shortIntervals"
-        label="Short intervals"
-        hide-details
-      ></v-checkbox>
-      <v-checkbox
-        v-model="shortMonths"
-        label="Short months"
-        hide-details
-      ></v-checkbox>
-      <v-checkbox
-        v-model="shortWeekdays"
-        label="Short weekdays"
-        hide-details
-      ></v-checkbox>
-      <v-select
-        v-model="color"
-        :items="colorOptions"
-        class="mt-3"
-        label="Color"
-        hide-details
-        outlined
-        dense
-      ></v-select>
-      <v-menu
-        ref="startMenu"
-        v-model="startMenu"
-        :close-on-content-click="false"
-        :nudge-right="40"
-        :return-value.sync="start"
-        transition="scale-transition"
-        min-width="290px"
-        offset-y
-      >
-        <template v-slot:activator="{ on }">
-          <v-text-field
-            v-model="start"
-            class="mt-3"
-            label="Start Date"
-            prepend-icon="event"
-            dense
-            readonly
-            outlined
-            hide-details
-            v-on="on"
-          ></v-text-field>
-        </template>
-        <v-date-picker
-          v-model="start"
-          no-title
-          scrollable
-        >
-          <v-spacer></v-spacer>
-          <v-btn
-            text
-            color="primary"
-            @click="startMenu = false"
-          >
-            Cancel
-          </v-btn>
-          <v-btn
-            text
-            color="primary"
-            @click="$refs.startMenu.save(start)"
-          >
-            OK
-          </v-btn>
-        </v-date-picker>
-      </v-menu>
-      <v-menu
-        v-if="hasEnd"
-        ref="endMenu"
-        v-model="endMenu"
-        :close-on-content-click="false"
-        :nudge-right="40"
-        :return-value.sync="end"
-        transition="scale-transition"
-        min-width="290px"
-        offset-y
-      >
-        <template v-slot:activator="{ on }">
-          <v-text-field
-            v-model="end"
-            class="mt-3"
-            label="End Date"
-            prepend-icon="event"
-            dense
-            readonly
-            outlined
-            hide-details
-            v-on="on"
-          ></v-text-field>
-        </template>
-        <v-date-picker
-          v-model="end"
-          no-title
-          scrollable
-        >
-          <v-spacer></v-spacer>
-          <v-btn
-            text
-            color="primary"
-            @click="endMenu = false"
-          >
-            Cancel
-          </v-btn>
-          <v-btn
-            text
-            color="primary"
-            @click="$refs.endMenu.save(end)"
-          >
-            OK
-          </v-btn>
-        </v-date-picker>
-      </v-menu>
-      <v-menu
-        ref="nowMenu"
-        v-model="nowMenu"
-        :close-on-content-click="false"
-        :nudge-right="40"
-        :return-value.sync="now"
-        transition="scale-transition"
-        min-width="290px"
-        offset-y
-      >
-        <template v-slot:activator="{ on }">
-          <v-text-field
-            v-model="now"
-            class="mt-3"
-            label="Today"
-            prepend-icon="event"
-            dense
-            readonly
-            outlined
-            hide-details
-            v-on="on"
-          ></v-text-field>
-        </template>
-        <v-date-picker
-          v-model="now"
-          no-title
-          scrollable
-        >
-          <v-spacer></v-spacer>
-          <v-btn
-            text
-            color="primary"
-            @click="nowMenu = false"
-          >
-            Cancel
-          </v-btn>
-          <v-btn
-            text
-            color="primary"
-            @click="$refs.nowMenu.save(now)"
-          >
-            OK
-          </v-btn>
-        </v-date-picker>
-      </v-menu>
-      <v-select
-        v-model="mode"
-        :items="modeOptions"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="Event Overlap Mode"
-      ></v-select>
-      <v-select
-        v-model="weekdays"
-        :items="weekdaysOptions"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="Weekdays"
-      ></v-select>
-      <v-text-field
-        v-if="type === 'custom-weekly'"
-        v-model="minWeeks"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="Minimum Weeks"
-        type="number"
-      ></v-text-field>
-      <v-select
-        v-if="hasIntervals"
-        v-model="intervals"
-        :items="intervalsOptions"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="Intervals"
-      ></v-select>
-      <v-select
-        v-if="type === 'custom-daily'"
-        v-model="maxDays"
-        :items="maxDaysOptions"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="# of Days"
-      ></v-select>
-      <v-select
-        v-if="hasIntervals"
-        v-model="styleInterval"
-        :items="styleIntervalOptions"
-        dense
-        outlined
-        hide-details
-        class="mt-3"
-        label="Styling"
-      ></v-select>
-    </v-col>
-    <v-col
-      sm="12"
       lg="9"
       class="pl-4"
     >
@@ -289,7 +31,7 @@
           :event-overlap-mode="mode"
           :event-overlap-threshold="45"
           :event-color="getEventColor"
-          @change="getEvents"
+          @click:date="routeToEntry"
         ></v-calendar>
       </v-sheet>
     </v-col>
@@ -425,46 +167,26 @@
       },
     },
     methods: {
-      viewDay ({ date }) {
-        this.start = date
-        this.type = 'day'
-      },
-      getEventColor (event) {
-        return event.color
-      },
-      showIntervalLabel (interval) {
-        return interval.minute === 0
-      },
-      getEvents ({ start, end }) {
-        const events = []
-        const min = new Date(`${start.date}T00:00:00`)
-        const max = new Date(`${end.date}T23:59:59`)
-        const days = (max.getTime() - min.getTime()) / 86400000
-        const eventCount = this.rnd(days, days + 20)
-        for (let i = 0; i < eventCount; i++) {
-          const allDay = this.rnd(0, 3) === 0
-          const firstTimestamp = this.rnd(min.getTime(), max.getTime())
-          const first = new Date(firstTimestamp - (firstTimestamp % 900000))
-          const secondTimestamp = this.rnd(2, allDay ? 288 : 8) * 900000
-          const second = new Date(first.getTime() + secondTimestamp)
-          events.push({
-            name: this.names[this.rnd(0, this.names.length - 1)],
-            start: this.formatDate(first, !allDay),
-            end: this.formatDate(second, !allDay),
-            color: this.colors[this.rnd(0, this.colors.length - 1)],
-          })
+        viewDay ({ date }) {
+          this.start = date
+            this.type = 'day'
+        },
+        getEventColor (event) {
+            return event.color
+        },
+        showIntervalLabel (interval) {
+            return interval.minute === 0
+        },
+        formatDate (a, withTime) {
+            return withTime
+            ? `${a.getFullYear()}-${a.getMonth() + 1}-${a.getDate()} ${a.getHours()}:${a.getMinutes()}`
+            : `${a.getFullYear()}-${a.getMonth() + 1}-${a.getDate()}`
+        },
+        routeToEntry () {
+            this.$router.push('/PersonalEntry')
+            return
         }
-        this.events = events
-      },
-      rnd (a, b) {
-        return Math.floor((b - a + 1) * Math.random()) + a
-      },
-      formatDate (a, withTime) {
-        return withTime
-          ? `${a.getFullYear()}-${a.getMonth() + 1}-${a.getDate()} ${a.getHours()}:${a.getMinutes()}`
-          : `${a.getFullYear()}-${a.getMonth() + 1}-${a.getDate()}`
-      },
-    },
+    }
   }
 </script>
 
