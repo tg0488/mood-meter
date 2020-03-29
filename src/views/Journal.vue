@@ -16,14 +16,14 @@
             <v-tab-item>
               <v-card flat>
                 <v-card-actions>
-                    <v-row>
+                    <v-row no-gutters>
                         <v-col cols="12">
-                      <v-btn width="50%" height="200px" color="red"></v-btn>
-                      <v-btn width="50%" height="200px" color="yellow"></v-btn>
+                      <v-btn width="50%" height="180px" color="red"></v-btn>
+                      <v-btn width="50%" height="180px" color="yellow"></v-btn>
                     </v-col>
                     <v-col cols="12">
-                      <v-btn width="50%" height="200px" color="blue"></v-btn>
-                      <v-btn width="50%" height="200px" color="green"></v-btn>
+                      <v-btn width="50%" height="180px" color="blue"></v-btn>
+                      <v-btn width="50%" height="180px" color="green"></v-btn>
                     </v-col>
                   </v-row>
                 </v-card-actions>
