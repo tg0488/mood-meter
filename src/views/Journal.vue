@@ -14,20 +14,26 @@
               Word Chart
             </v-tab>
             <v-tab-item>
-              <v-card flat>
-                <v-card-actions>
-                    <v-row no-gutters>
-                        <v-col cols="12">
-                      <v-btn width="50%" tile height="180px" color="red"></v-btn>
-                      <v-btn width="50%" tile height="180px" color="yellow"></v-btn>
-                    </v-col>
-                    <v-col cols="12">
-                      <v-btn width="50%" tile height="180px" color="blue"></v-btn>
-                      <v-btn width="50%" tile height="180px" color="green"></v-btn>
-                    </v-col>
-                  </v-row>
-                </v-card-actions>
-              </v-card>
+                  <v-card flat>
+                        <v-row class="button_row" no-gutters>
+                            <v-row class="button_row" no-gutters>
+                                <v-col cols="6">
+                                    <v-btn width="100%" height="180px" flat tile color="red"></v-btn>
+                                </v-col>
+                                <v-col cols="6">
+                                    <v-btn width="100%" height="180px" flat tile color="yellow"></v-btn>
+                                </v-col>
+                            </v-row>
+                            <v-row class="button_row" no-gutters>
+                                <v-col cols="6">
+                                    <v-btn width="100%" height="180px" flat tile color="blue"></v-btn>
+                                </v-col>
+                                <v-col cols="6">
+                                    <v-btn width="100%" height="180px" flat tile color="green"></v-btn>
+                                </v-col>
+                            </v-row>
+                      </v-row>
+                  </v-card>
             </v-tab-item>
             <v-tab-item>
               <v-card flat>
@@ -173,6 +179,9 @@ export default {
 v-btn {
     width: fit-content;
 }
+    .button_row{
+        width: 100%;
+    }
     .direction_buttons_left{
         width: 85%;
         margin-left: 10%;
