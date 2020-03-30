@@ -3,7 +3,13 @@
     <v-app-bar
             app
             dark
-            src="https://i.picsum.photos/id/168/1920/1080.jpg">
+            src="https://i.picsum.photos/id/477/1920/1080.jpg">
+        <template v-slot:img="{ props }">
+          <v-img
+                  v-bind="props"
+                  gradient="to top right, rgba(0,0,0,.4), rgba(0,0,0,.4)"
+          ></v-img>
+        </template>
         <v-toolbar-title>Insert Title Here</v-toolbar-title>
         <v-spacer></v-spacer>
         <template v-slot:extension>
