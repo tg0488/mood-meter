@@ -1,6 +1,6 @@
 <template>
-  <v-container style="height:100%;">
-    <v-layout class="my-12" text-center>
+  <v-container>
+    <v-layout text-center>
       <!--<v-row justify="center">-->
         <!--<v-col cols="8">-->
           <!--<v-btn class="home_main_buttons" large outlined to="Journal">Journal</v-btn>-->
@@ -12,7 +12,7 @@
           <!--<v-btn class="home_main_buttons" large outlined to="TeamHome">Team Home</v-btn>-->
         <!--</v-col>-->
       <!--</v-row>-->
-        <v-row wrap>
+        <v-row>
           <v-col class="pa-0" cols="12">
             <v-row justify="space-around">
               <v-col class="pa-0" cols="8">
