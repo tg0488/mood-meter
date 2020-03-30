@@ -1,4 +1,5 @@
 <template>
+    <div>
   <v-row>
     <v-col
       sm="12"
@@ -35,7 +36,11 @@
         ></v-calendar>
       </v-sheet>
     </v-col>
-  </v-row>
+</v-row>
+    <v-btn large outlined to="/">
+        Back
+    </v-btn>
+</div>
 </template>
 
 <script>
@@ -148,8 +153,8 @@
         { text: 'Black', value: 'black' },
       ],
       shortIntervals: true,
-      shortMonths: false,
-      shortWeekdays: false,
+      shortMonths: true,
+      shortWeekdays: true,
     }),
     computed: {
       intervalStyle () {
