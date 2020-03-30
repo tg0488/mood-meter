@@ -26,12 +26,14 @@
                 professors about the issues I am having.
             </b>
         </v-row>
-        <v-row >
-            <v-btn large outlined to="PersonalLog">
-                Back
-            </v-btn>
-        </v-row>
             </v-col>
+        </v-layout>
+        <v-layout>
+            <v-row style="width:100%;" justify="space-around">
+                <v-col cols="6">
+                    <v-btn style="width:90%; margin-left:5%; margin-right:5%;" large outlined to="PersonalLog">Back</v-btn>
+                </v-col>
+            </v-row>
         </v-layout>
     </v-container>
 </template>

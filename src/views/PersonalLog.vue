@@ -1,46 +1,55 @@
 <template>
-    <div>
-  <v-row>
-    <v-col
-      sm="12"
-      lg="9"
-      class="pl-4"
-    >
-      <v-sheet height="600">
-        <v-calendar
-          ref="calendar"
-          v-model="start"
-          :type="type"
-          :start="start"
-          :end="end"
-          :min-weeks="minWeeks"
-          :max-days="maxDays"
-          :now="now"
-          :dark="dark"
-          :weekdays="weekdays"
-          :first-interval="intervals.first"
-          :interval-minutes="intervals.minutes"
-          :interval-count="intervals.count"
-          :interval-height="intervals.height"
-          :interval-style="intervalStyle"
-          :show-interval-label="showIntervalLabel"
-          :short-intervals="shortIntervals"
-          :short-months="shortMonths"
-          :short-weekdays="shortWeekdays"
-          :color="color"
-          :events="events"
-          :event-overlap-mode="mode"
-          :event-overlap-threshold="45"
-          :event-color="getEventColor"
-          @click:date="routeToEntry"
-        ></v-calendar>
-      </v-sheet>
-    </v-col>
-</v-row>
-    <v-btn large outlined to="/">
-        Back
-    </v-btn>
-</div>
+    <v-container style="height: 100%">
+        <!--<v-layout style="min-height: 10%;">-->
+            <!--<v-row>-->
+                <!--<v-col cols="12">-->
+                    <!--<h2>Personal Log</h2>-->
+                    <!--<hr style="width: 40%" size="4">-->
+                <!--</v-col>-->
+            <!--</v-row>-->
+        <!--</v-layout>-->
+        <v-layout>
+            <v-row style="width: 100%" justify="space-around">
+                <v-col cols="12" md="9">
+                  <v-sheet height="600">
+                    <v-calendar
+                      ref="calendar"
+                      v-model="start"
+                      :type="type"
+                      :start="start"
+                      :end="end"
+                      :min-weeks="minWeeks"
+                      :max-days="maxDays"
+                      :now="now"
+                      :dark="dark"
+                      :weekdays="weekdays"
+                      :first-interval="intervals.first"
+                      :interval-minutes="intervals.minutes"
+                      :interval-count="intervals.count"
+                      :interval-height="intervals.height"
+                      :interval-style="intervalStyle"
+                      :show-interval-label="showIntervalLabel"
+                      :short-intervals="shortIntervals"
+                      :short-months="shortMonths"
+                      :short-weekdays="shortWeekdays"
+                      :color="color"
+                      :events="events"
+                      :event-overlap-mode="mode"
+                      :event-overlap-threshold="45"
+                      :event-color="getEventColor"
+                      @click:date="routeToEntry"></v-calendar>
+                  </v-sheet>
+                </v-col>
+            </v-row>
+        </v-layout>
+        <v-layout>
+            <v-row style="width: 100%" justify="space-around">
+                <v-col cols="6">
+                    <v-btn style="width:90%; margin-left:5%; margin-right:5%;" large outlined to="/">Back</v-btn>
+                </v-col>
+            </v-row>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>
@@ -76,15 +85,20 @@
   }
   export default {
     data: () => ({
+      events: [
+          {
+              name: '1 Log entry',
+              start: '2020-01-01'
+          }
+      ],
       dark: false,
       startMenu: false,
-      start: '2019-01-12',
+      start: '2020-01-12',
       endMenu: false,
-      end: '2019-01-27',
+      end: '2020-01-27',
       nowMenu: false,
       minWeeks: 1,
       now: null,
-      events: [],
       colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
       names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
       type: 'month',
