@@ -18,12 +18,11 @@
                     </v-col>
                 </v-row>
                 <v-row justify="space-around" style="width: 100%">
-                    <v-col></v-col>
                     <v-col cols="7" v-for="(item,i) in numberOfTeamMembers" :key="i">
                         <v-text-field outlined hide-details placeholder="Team Member Email"></v-text-field>
                     </v-col>
-                    <v-col cols="7">
-                        <v-btn outlined rounded x-large>+</v-btn>
+                    <v-col cols="6">
+                        <v-btn style="width:50%; margin-left: 25%; margin-right: 25%;" outlined rounded x-large>+</v-btn>
                     </v-col>
                 </v-row>
             </v-row>

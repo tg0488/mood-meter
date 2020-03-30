@@ -10,10 +10,10 @@
                 </v-col>
             </v-row>
         </v-layout>
-        <v-layout>
+        <v-layout text-center class="py-6">
             <v-row style="width: 100%">
                 <v-col cols="12">
-                    <v-text-field label="Enter Code" outlined></v-text-field>
+                    <v-text-field hide-details label="Enter Code" outlined></v-text-field>
                 </v-col>
                 <v-col cols="12">
                     <h3>Or</h3>

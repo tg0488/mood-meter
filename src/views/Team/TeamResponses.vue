@@ -2,7 +2,10 @@
     <v-container>
         <v-layout>
             <v-row>
-                <v-col cols="12"><h1>Team Responses</h1></v-col>
+                <v-col cols="12">
+                    <h1>Team Responses</h1>
+                    <v-divider></v-divider>
+                </v-col>
             </v-row>
         </v-layout>
         <v-layout>
