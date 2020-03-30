@@ -45,14 +45,14 @@
                       <v-row class="button_row" no-gutters>
                             <v-col cols="6">
                                 <v-row class="button_row" no-gutters wrap>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Enraged</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Panicked</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Stressed</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%;" flat tile color="red" >Enraged</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%;" flat tile color="red" >Panicked</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%;" flat tile color="red" >Stressed</v-btn></v-col>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Jittery</v-btn></v-col>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Shocked</v-btn></v-col>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Livid</v-btn></v-col>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Furious</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Frustrated</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%;" flat tile color="red" >Frustrated</v-btn></v-col>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Tense</v-btn></v-col>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Stunned</v-btn></v-col>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Fuming</v-btn></v-col>
@@ -66,30 +66,6 @@
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Uneasy</v-btn></v-col>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="red" >Peeved</v-btn></v-col>
                                 </v-row>
-                                <v-row class="button_row" no-gutters wrap>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Suprised</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Upbeat</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Festive</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Exhilarated</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Ecstatic</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Hyper</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Cheerful</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Motivated</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Inspired</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Elated</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Energized</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Lively</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Enthusiastic</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Optimistic</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Excited</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Pleasant</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Joyful</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Hopeful</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Playful</v-btn></v-col>
-                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Blissful</v-btn></v-col>
-                                </v-row>
-                            </v-col>
-                            <v-col cols="6">
                                 <v-row class="button_row" no-gutters wrap>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="blue">Disgusted</v-btn></v-col>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="blue">Glum</v-btn></v-col>
@@ -111,6 +87,30 @@
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="blue">Sullen</v-btn></v-col>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="blue">Exhausted</v-btn></v-col>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="blue">Fatigued</v-btn></v-col>
+                                </v-row>
+                            </v-col>
+                            <v-col cols="6">
+                                <v-row class="button_row" no-gutters wrap>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Suprised</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Upbeat</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Festive</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Exhilarated</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Ecstatic</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Hyper</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Cheerful</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Motivated</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Inspired</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Elated</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Energized</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Lively</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Enthusiastic</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Optimistic</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Excited</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Pleasant</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Joyful</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Hopeful</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Playful</v-btn></v-col>
+                                    <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="yellow">Blissful</v-btn></v-col>
                                 </v-row>
                                 <v-row class="button_row" no-gutters wrap>
                                     <v-col cols="6" md="3"><v-btn style="width: 100%" flat tile color="green">At Ease</v-btn></v-col>
