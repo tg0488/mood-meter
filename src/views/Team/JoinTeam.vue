@@ -1,15 +1,15 @@
 <template>
     <v-container>
-        <v-layout>
-            <v-row style="width: 100%">
-                <v-col cols="6">
-                    <v-btn class="team_join_create_buttons" outlined large color="black">Join Team</v-btn>
-                </v-col>
-                <v-col cols="6">
-                    <v-btn class="team_join_create_buttons" outlined large to="CreateTeam">Create Team</v-btn>
-                </v-col>
-            </v-row>
-        </v-layout>
+        <!--<v-layout>-->
+            <!--<v-row style="width: 100%">-->
+                <!--<v-col cols="6">-->
+                    <!--<v-btn class="team_join_create_buttons" outlined large color="black">Join Team</v-btn>-->
+                <!--</v-col>-->
+                <!--<v-col cols="6">-->
+                    <!--<v-btn class="team_join_create_buttons" outlined large to="CreateTeam">Create Team</v-btn>-->
+                <!--</v-col>-->
+            <!--</v-row>-->
+        <!--</v-layout>-->
         <v-layout text-center class="py-6">
             <v-row style="width: 100%">
                 <v-col cols="12">

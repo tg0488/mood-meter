@@ -14,14 +14,14 @@
         <v-spacer></v-spacer>
         <template v-slot:extension>
           <v-tabs dark>
-            <v-tab to="/">Journal</v-tab>
-            <v-tab to="/PersonalLog">Personal Log</v-tab>
-            <v-tab to="/teamHome">Team Home</v-tab>
+            <v-tab to="/" :disabled="tabsLocked">Journal</v-tab>
+            <v-tab to="/PersonalLog" :disabled="tabsLocked">Personal Log</v-tab>
+            <v-tab to="/teamHome" :disabled="tabsLocked">Team Home</v-tab>
           </v-tabs>
         </template>
     </v-app-bar>
     <v-content>
-      <router-view></router-view>
+      <router-view v-on:toggleTabLock="toggleTabsLocked"></router-view>
     </v-content>
   </v-app>
 </template>
@@ -29,13 +29,18 @@
 <script>
 
 export default {
-  name: 'App',
+    name: 'App',
 
-  components: {
-  },
+    components: {
+    },
 
-  data: () => ({
-    //
-  }),
+    data: () => ({
+        tabsLocked: false
+    }),
+    methods: {
+        toggleTabsLocked: function(value){
+            this.tabsLocked = value;
+        }
+    }
 };
 </script>

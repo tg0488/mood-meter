@@ -11,12 +11,12 @@
         <v-layout>
             <v-row>
                 <v-col cols="12">
-                    <v-expansion-panels v-for="(item,i) in 5" :key="i" inset class="py-1">
-                        <v-expansion-panel>
-                            <v-expansion-panel-header>Team Member {{item}}</v-expansion-panel-header>
-                            <v-expansion-panel-content>Team member response</v-expansion-panel-content>
-                        </v-expansion-panel>
-                    </v-expansion-panels>
+                        <v-expansion-panels light>
+                            <v-expansion-panel v-for="(item, i) in teamInfo[selectedTeam]" :key="i">
+                                <v-expansion-panel-header>{{i}}</v-expansion-panel-header>
+                                <v-expansion-panel-content>{{item}}</v-expansion-panel-content>
+                            </v-expansion-panel>
+                        </v-expansion-panels>
                 </v-col>
             </v-row>
         </v-layout>
@@ -34,7 +34,48 @@
 
 <script>
     export default {
-        name: "TeamResponses"
+        name: "TeamResponses",
+        props: {
+            teamInfo: {
+                type: Object,
+                required: false
+            },
+            selectedTeam: {
+                type: String,
+                required: false
+            }
+        },
+        mounted(){
+            this.onTeamResponsesPage();
+        },
+        data (){
+            return{
+                // teamInfo: {
+                //     'Team 1': {
+                //         'Taylor Grant': "No response yet",
+                //         'Zach Tucker': "No response yet",
+                //         'Dan Murray': "No response yet"
+                //     },
+                //     'Team 2': {
+                //         'Connor': "No response yet",
+                //         'Carter': "No response yet",
+                //         'Menz': "No response yet",
+                //     },
+                //     'Team 3': {
+                //         "Yasmine Elglaly": "No response yet"
+                //     }
+                // },
+                teamNames: ['Team 1', 'Team 2', 'Team 3'],
+                // selectedTeam: 'Team 1',
+                overlayValue: true,
+                overlayAbsolute: true
+            }
+        },
+        methods: {
+            onTeamResponsesPage: function(){
+                this.$emit('toggleTabLock', true);
+            }
+        }
     }
 </script>
 
