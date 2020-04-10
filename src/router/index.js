@@ -20,19 +20,21 @@ const routes = [
     component: TeamHome
   },
   {
-      path: '/Journal',
-      name: 'Journal',
-      component: Journal
+    path: '/Journal',
+    name: 'Journal',
+    component: Journal
   },
   {
-      path: '/PersonalLog',
-      name: 'PersonalLog',
-      component: PersonalLog
+    path: '/PersonalLog',
+    name: 'PersonalLog',
+    component: PersonalLog,
   },
   {
     path: '/WrittenJournal',
     name: 'WrittenJournal',
-    component: WrittenJournal
+    component: WrittenJournal,
+    props: true,
+
   }
 ]
 
