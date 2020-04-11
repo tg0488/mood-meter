@@ -47,7 +47,8 @@ const routes = [
   {
     path: "/TeamResponses",
     name: "TeamResponses",
-    component: TeamResponses
+    component: TeamResponses,
+    props: true
   },
   {
     path: "/JoinTeam",
