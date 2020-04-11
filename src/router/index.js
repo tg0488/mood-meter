@@ -1,10 +1,14 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-import TeamHome from "../views/TeamHome";
-import Journal from "../views/Journal";
-import PersonalLog from "../views/PersonalLog";
-import WrittenJournal from "../views/WrittenJournal";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
+import Journal from '../views/Journal'
+import WrittenJournal from '../views/WrittenJournal'
+import PersonalLog from '../views/PersonalLog'
+import PersonalEntry from '../views/PersonalEntry'
+import TeamHome from '../views/Team/TeamHome'
+import TeamResponses from '../views/Team/TeamResponses'
+import JoinTeam from '../views/Team/JoinTeam'
+import CreateTeam from '../views/Team/CreateTeam'
 
 Vue.use(VueRouter);
 
