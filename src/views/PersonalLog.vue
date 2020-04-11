@@ -9,6 +9,13 @@
             <!--</v-row>-->
         <!--</v-layout>-->
         <v-layout>
+            <v-btn
+        icon
+        class="ma-2"
+        @click="$refs.calendar.prev()"
+      >
+      <v-icon>mdi-chevron-left</v-icon>
+      </v-btn>
             <v-row style="width: 100%" justify="space-around">
                 <v-col cols="12" md="9">
                   <v-sheet height="600">
@@ -33,14 +40,17 @@
                       :short-months="shortMonths"
                       :short-weekdays="shortWeekdays"
                       :color="color"
-                      :events="events"
-                      :event-overlap-mode="mode"
-                      :event-overlap-threshold="45"
-                      :event-color="getEventColor"
                       @click:date="routeToEntry"></v-calendar>
                   </v-sheet>
                 </v-col>
             </v-row>
+            <v-btn
+              icon
+              class="ma-2"
+              @click="$refs.calendar.next()"
+            >
+            <v-icon>mdi-chevron-right</v-icon>
+            </v-btn>
         </v-layout>
         <v-layout>
             <v-row style="width: 100%" justify="space-around">
