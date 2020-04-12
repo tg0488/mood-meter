@@ -102,7 +102,7 @@
                     }
                     updatedTeams[name] = newTeam;
                     this.$store.dispatch('addTeam',name, newTeam);
-                    // this.$emit('addNewTeam', updatedTeams);
+                    this.$emit('newTeamAdded');
                 }
             }
         }

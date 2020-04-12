@@ -13,6 +13,23 @@ const state = {
         'Team 3': {
             "Yasmine Elglaly": "No response yet"
         }
+    },
+    allTeams:{
+        'Team 4':{
+            'Team member 1': '',
+            'Team member 2': '',
+            'Team member 3': ''
+        },
+        'Team 5': {
+            'Team member 1': '',
+            'Team member 2': '',
+            'Team member 3': ''
+        },
+        'Team 6': {
+            'Team member 1': '',
+            'Team member 2': '',
+            'Team member 3': ''
+        }
     }
 };
 
