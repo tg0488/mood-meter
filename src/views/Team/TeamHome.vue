@@ -101,6 +101,10 @@
                 this.teamNames = this.getAllTeamNames(this.teams);
                 this.toggleCreateTeamOverlay(false);
             },
+            newTeamJoined: function(){
+                this.teamNames = this.getAllTeamNames(this.teams);
+                this.toggleJoinTeamOverlay(false);
+            },
             getAllTeamNames: function(teamDict){
                 var name = [] ;
                 for(var key in teamDict){

@@ -6,8 +6,6 @@ import WrittenJournal from '../views/WrittenJournal'
 import PersonalLog from '../views/PersonalLog'
 import TeamHome from '../views/Team/TeamHome'
 import TeamResponses from '../views/Team/TeamResponses'
-import JoinTeam from '../views/Team/JoinTeam'
-import CreateTeam from '../views/Team/CreateTeam'
 
 Vue.use(VueRouter)
 
@@ -42,16 +40,6 @@ const routes = [
         name: 'TeamResponses',
         component: TeamResponses,
         props: true
-    },
-    {
-        path: '/JoinTeam',
-        name: 'JoinTeam',
-        component: JoinTeam
-    },
-    {
-        path: '/CreateTeam',
-        name: 'CreateTeam',
-        component: CreateTeam
     }
 ]
 

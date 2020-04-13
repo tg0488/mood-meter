@@ -12,7 +12,7 @@
             <v-layout text-center>
                 <v-row justify="space-around" style="width: 100%">
                     <v-col cols="12">
-                        <v-text-field hide-details label="Enter Join Code" outlined></v-text-field>
+                        <v-text-field v-model="joinCode" hide-details label="Enter Join Code" outlined></v-text-field>
                     </v-col>
                     <v-col cols="12">
                         <h3>Or</h3>
@@ -28,7 +28,7 @@
                         <v-btn class="direction_buttons_left" large outlined @click="closeJoinTeam">Back</v-btn>
                     </v-col>
                     <v-col cols="6">
-                        <v-btn class="direction_buttons_right" large outlined>Join</v-btn>
+                        <v-btn class="direction_buttons_right" large outlined @click="joinTeam">Join</v-btn>
                     </v-col>
                 </v-row>
             </v-layout>
@@ -39,9 +39,42 @@
 <script>
     export default {
         name: "JoinTeam",
+        data(){
+          return{
+              joinCode: ''
+          }
+        },
         methods: {
             closeJoinTeam: function(){
                 this.$emit('closeJoinTeamOverlay', false);
+            },
+            joinTeam: function(){
+                var validname = false;
+                var teamJoinCode = this.joinCode;
+                var curTeamMembers = this.$store.getters.getTeamMembers(teamJoinCode);
+                var allTeams = this.$store.getters.getAllTeams;
+                for(var key in allTeams){
+                    if(key == name){
+                        validname = true;
+                        break;
+                    }
+                }
+                var yourTeams = this.$store.getters.getYourTeams;
+                for(var k in yourTeams){
+                    if(k == name){
+                        validname = false;
+                        console.log('You are already on team ' + teamJoinCode);
+                        break;
+                    }
+                }
+                if(validname) {
+                    this.$store.dispatch('joinTeam', teamJoinCode, curTeamMembers);
+                    this.console.log('Team ' + teamJoinCode + ' has been joined');
+                    this.$emit('newTeamJoined')
+                }
+                else {
+                    console.log('Team ' + teamJoinCode + ' does not exists');
+                }
             }
         }
     }

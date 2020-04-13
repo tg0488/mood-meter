@@ -44,15 +44,16 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex'
     export default {
         name: "CreateTeam",
         props:[
             'teams'
         ],
-        computed: mapState({
-            yourTeams: state => state.teams.yourTeams
-        }),
+        computed: {
+            yourTeams() {
+                return this.$store.getters.getYourTeams;
+            }
+        },
         data () {
             return{
                 numberOfTeamMembers: 3,
@@ -85,14 +86,17 @@
             createTeam: function(){
                 var name = this.newTeamName;
                 var validname = true;
-                for(var key in this.teams){
+                var allTeams = this.$store.getters.getAllTeams;
+                for(var key in allTeams){
                     if(key == name){
                         validname = false;
+                        console.log('Team ' + name + ' already exists');
                         break;
                     }
                 }
                 if(name == ''){
                     validname = false;
+                    console.log('No Team Name inputted')
                 }
                 if(validname) {
                     var updatedTeams = this.teams;
@@ -102,6 +106,7 @@
                     }
                     updatedTeams[name] = newTeam;
                     this.$store.dispatch('addTeam',name, newTeam);
+                    console.log('Team ' + name + ' has been created');
                     this.$emit('newTeamAdded');
                 }
             }
