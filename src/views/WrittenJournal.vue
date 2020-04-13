@@ -3,11 +3,18 @@
     <v-layout>
       <v-row>
         <v-col cols="12">
-          <h2>Why do you feel {{ journal.word }}</h2>
+          <h2 v-if="!(journal.word == '')">Why do you feel {{ journal.word }}</h2>
+          <h2 v-else-if="!(journal.color=='')">Why do you feel {{journal.color}}</h2>
+          <h2 v-else>Why do you feel that way</h2>
           <hr style="width: 60%" size="4" />
         </v-col>
         <v-col cols="12">
-          <v-textarea :value="textcontent" outlined rows="10" color=""></v-textarea>
+          <v-textarea
+            :value="textcontent"
+            outlined
+            rows="10"
+            color=""
+          ></v-textarea>
         </v-col>
         <v-col cols="12">
           <v-row>
@@ -18,8 +25,8 @@
             </v-col>
             <!--<v-btn width="33%" large outlined to="/">Skip Journal</v-btn>-->
             <v-col cols="6">
-              <v-btn class="direction_buttons_right" large outlined to="/"
-                >Next</v-btn
+              <v-btn class="direction_buttons_right" large outlined @click="submit"
+                >Submit Journal</v-btn
               >
             </v-col>
           </v-row>
@@ -35,20 +42,22 @@ export default {
   props: {
     journal: {
       color: String,
-      word: String,
-      }
+      word: String
+    }
   },
-  data() {
-    return {
-      textContent: ""
-    };
-  },
-  computed: {
-
-  },
-  methods: {
-
-  },
+data(){
+  return {
+    textcontent: ''
+  }
+},
+methods: {
+    submit: function() {
+      var today = new Date();
+      var date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+      this.$store.commit("ADD_JOURNAL", [date, this.journal.color, this.journal.word, this.textContent])
+      this.$router.push("/")
+    }
+  }
 };
 </script>
 
