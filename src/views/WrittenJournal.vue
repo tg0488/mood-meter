@@ -10,7 +10,7 @@
         </v-col>
         <v-col cols="12">
           <v-textarea
-            :value="textcontent"
+            v-model="message"
             outlined
             rows="10"
             color=""
@@ -53,8 +53,9 @@ data(){
 methods: {
     submit: function() {
       var today = new Date();
-      var date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-      this.$store.commit("ADD_JOURNAL", [date, this.journal.color, this.journal.word, this.textContent])
+      var id = this.$store.getters.numJournals;
+      var date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate() + "-" + id;
+      this.$store.commit("ADD_JOURNAL", [date, this.journal.color, this.journal.word, this.message])
       this.$router.push("/")
     }
   }

@@ -1,6 +1,9 @@
 const state = {
     Journals: []
-    //structure of journal [Date(YYYY-MM-DD), Color, Word, Content]
+    //Array of Arrays
+    // Structure of journal Array
+    // [Date(YYYY-MM-DD-ID), Color, Word, Content]
+    //ID = num of journal, incremented by one per existing journal
 };
 
 const mutations = {
@@ -18,6 +21,9 @@ const actions = {
 const getters = {
     getJournals(state){
         return state.Journals;
+    },
+    numJournals(state){
+        return state.Journals.length;
     }
 }
 
