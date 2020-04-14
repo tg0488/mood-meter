@@ -38,28 +38,34 @@
 
 <script>
 export default {
-  name: "WrittenJournal",
-  props: {
-    journal: {
-      color: String,
-      word: String,
-      default: function() {
-        return {
-          color: '',
-          word: '',
+    name: "WrittenJournal",
+    props: {
+      journal: {
+        color: String,
+        word: String,
+        default: function() {
+          return {
+            color: '',
+            word: '',
+          }
         }
       }
+    },
+    mounted (){
+      this.onWrittenJournalPage();
+    },
+    methods: {
+        onWrittenJournalPage: function(){
+            this.$emit('toggleTabLock', true);
+        },
+        submit: function() {
+          var today = new Date();
+          var id = this.$store.getters.numJournals;
+          var date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate() + "-" + id;
+          this.$store.commit("ADD_JOURNAL", [date, this.journal.color, this.journal.word, this.message])
+          this.$router.push("/")
+        }
     }
-  },
-methods: {
-    submit: function() {
-      var today = new Date();
-      var id = this.$store.getters.numJournals;
-      var date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate() + "-" + id;
-      this.$store.commit("ADD_JOURNAL", [date, this.journal.color, this.journal.word, this.message])
-      this.$router.push("/")
-    }
-  }
 };
 </script>
 

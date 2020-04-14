@@ -92,12 +92,18 @@ import gridbtn from './../components/gridbtn.vue'
         components: {
           gridbtn
         },
+        mounted(){
+          this.onJournalPage();
+        },
         methods: {
-          change: function(value, color) {
+            onJournalPage: function(){
+                this.$emit('toggleTabLock', true);
+            },
+            change: function(value, color) {
             this.journalInfo.word = value;
             this.journalInfo.color = color;
             this.$store.commit("NEW_LASTCOLOR", color)
-          }
+            }
         }
     };
 </script>

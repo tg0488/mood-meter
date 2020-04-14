@@ -50,9 +50,17 @@
 // @ is an alias to /src
 
 export default {
-  name: 'Home',
-  components: {
-  }
+    name: 'Home',
+    components: {
+    },
+    mounted() {
+        this.onHomePage();
+    },
+    methods: {
+        onHomePage: function(){
+            this.$emit('toggleTabLock', false);
+        },
+    }
 }
 </script>
 
