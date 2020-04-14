@@ -61,7 +61,20 @@
             entryPicker: function(){
                 var chosenNumber = Math.floor(Math.random() * this.entryList.length);
                 this.chosenEntry = this.entryList[chosenNumber]
-                this.chosenEntry[0] = this.entryDate
+                this.chosenEntry[0] = this.parseDate(this.entryDate)
+            },
+            parseDate: function(date){
+                var month = date.substring(5, 7);
+                var day = date.substring(8, 11);
+                switch(month) {
+                    case '01':
+                    month = "January";
+                    break;
+                    case '02':
+                    month = "January";
+                    break;
+                }
+                return (month + " " + day)
             }
         }
     }
