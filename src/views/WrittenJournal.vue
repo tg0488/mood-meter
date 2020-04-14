@@ -6,7 +6,7 @@
           <h2 v-if="!(journal.word == '')">Why do you feel {{ journal.word }}</h2>
           <h2 v-else-if="!(journal.color=='')">Why do you feel {{journal.color}}</h2>
           <h2 v-else>Why do you feel that way</h2>
-          <hr style="width: 60%" size="4" />
+          <hr :color="this.$store.getters.getLastColor" style="width: 60%" size="4" />
         </v-col>
         <v-col cols="12">
           <v-textarea
@@ -68,10 +68,12 @@ methods: {
   width: 85%;
   margin-left: 10%;
   margin-right: 5%;
+  font-size: small;
 }
 .direction_buttons_right {
   width: 85%;
   margin-left: 5%;
   margin-right: 10%;
+  font-size: small;
 }
 </style>

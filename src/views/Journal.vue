@@ -4,14 +4,14 @@
       <v-row>
         <v-col cols="12">
             <h2>What best describes how you are feeling?</h2>
-            <hr style="width: 60%" size="4">
+            <hr :color="this.$store.getters.getLastColor" style="width: 60%" size="4">
         </v-col>
       </v-row>
     </v-layout>
     <v-layout style="width: 100%;">
         <v-row>
             <v-col cols="12">
-              <v-tabs :color="journalInfo.color" grow :slider-color="journalInfo.color">
+              <v-tabs :color="this.$store.getters.getLastColor" grow :slider-color="this.$store.getters.getLastColor">
                 <v-tab ripple>
                   Color Chart
                 </v-tab>
@@ -61,8 +61,8 @@
                         <v-btn class="direction_buttons_left" large outlined to="/">Back</v-btn>
                     </v-col>
                     <v-col cols="6">
-                        <v-btn v-if="!journalInfo.word == ''" class="direction_buttons_right" large outlined :to="{name:'WrittenJournal',params:{journal:journalInfo}}">Write about feeling {{journalInfo.word}}</v-btn>
-                        <v-btn v-else-if="!journalInfo.color == ''"  class="direction_buttons_right" large outlined :to="{name:'WrittenJournal',params:{journal:journalInfo}}">Write about feeling {{journalInfo.color}}</v-btn>
+                        <v-btn v-if="!journalInfo.word == ''" class="direction_buttons_right" large outlined :to="{name:'WrittenJournal',params:{journal:journalInfo}}">Write about <br/> feeling {{journalInfo.word}}</v-btn>
+                        <v-btn v-else-if="!journalInfo.color == ''"  class="direction_buttons_right" large outlined :to="{name:'WrittenJournal',params:{journal:journalInfo}}">Write about <br/> feeling {{journalInfo.color}}</v-btn>
                         <v-btn v-else disabled class="direction_buttons_right" large outlined></v-btn>
                     
                     </v-col>
@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import gridbtn from './gridbtn.vue'
+import gridbtn from './../components/gridbtn.vue'
     export default {
         name: "Journal",
         data () {
@@ -96,6 +96,7 @@ import gridbtn from './gridbtn.vue'
           change: function(value, color) {
             this.journalInfo.word = value;
             this.journalInfo.color = color;
+            this.$store.commit("NEW_LASTCOLOR", color)
           }
         }
     };
@@ -109,11 +110,17 @@ import gridbtn from './gridbtn.vue'
         width: 85%;
         margin-left: 10%;
         margin-right: 5%;
+        font-size: medium;
     }
     .direction_buttons_right{
         width: 85%;
         margin-left: 5%;
         margin-right: 10%;
+        font-size: x-small;
+
+    }
+    .overline{
+
     }
 
 </style>
