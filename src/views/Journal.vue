@@ -63,7 +63,7 @@
                     <v-col cols="6">
                         <v-btn v-if="!journalInfo.word == ''" class="direction_buttons_right" large outlined :to="{name:'WrittenJournal',params:{journal:journalInfo}}">Write about <br/> feeling {{journalInfo.word}}</v-btn>
                         <v-btn v-else-if="!journalInfo.color == ''"  class="direction_buttons_right" large outlined :to="{name:'WrittenJournal',params:{journal:journalInfo}}">Write about <br/> feeling {{journalInfo.color}}</v-btn>
-                        <v-btn v-else disabled class="direction_buttons_right" large outlined></v-btn>
+                        <v-btn v-else class="direction_buttons_right" large outlined :to="{name:'WrittenJournal',params:{journal:journalInfo}}">Skip selecting<br/>a color or word</v-btn>
                     
                     </v-col>
                 </v-row>
@@ -111,12 +111,14 @@ import gridbtn from './../components/gridbtn.vue'
         margin-left: 10%;
         margin-right: 5%;
         font-size: medium;
+        text-align: center;
     }
     .direction_buttons_right{
         width: 85%;
         margin-left: 5%;
         margin-right: 10%;
         font-size: x-small;
+        text-align: center;
 
     }
     .overline{

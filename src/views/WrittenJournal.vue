@@ -69,11 +69,14 @@ methods: {
   margin-left: 10%;
   margin-right: 5%;
   font-size: small;
+  text-align: center;
 }
 .direction_buttons_right {
   width: 85%;
   margin-left: 5%;
   margin-right: 10%;
   font-size: small;
+  text-align: center;
+  
 }
 </style>

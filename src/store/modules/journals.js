@@ -13,7 +13,7 @@ const state = {
 
 const mutations = {
     ADD_JOURNAL(state, journal){
-        state.Journals[state.Journals.length] = journal
+        state.Journals.push(journal);
         //Journal ID is the number of journals currently in the store
     },
     NEW_LASTCOLOR(state, color){
