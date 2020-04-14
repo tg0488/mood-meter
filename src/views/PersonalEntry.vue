@@ -46,17 +46,22 @@
         },
         data() {
             return {
-                entryList: [['Date','a1beef','Angry','My boss yelled at me for not cleaning up the sink. I need to relax.'],
+                entryList: [['Date','d11','Angry','My boss yelled at me for not cleaning up the sink. I need to relax.'],
                 ['Date','11d','Tired','I woke up late today. I need to go to bed earlier.'],
                 ['Date','ea0','Elated','I love my new assignment. It provides many interesting problems for me to solve.'],
                 ['Date','183','Calm','The day is going well so far and I am content with my current assignment.']],
-                chosenEntry: ['','','','']
+                chosenEntry: ['','','',''],
+                entryDate: ''
             }
+        },
+        created() {
+            this.entryDate = this.$route.params.entryDate;
         },
         methods: {
             entryPicker: function(){
                 var chosenNumber = Math.floor(Math.random() * this.entryList.length);
                 this.chosenEntry = this.entryList[chosenNumber]
+                this.chosenEntry[0] = this.entryDate
             }
         }
     }

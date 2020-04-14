@@ -196,10 +196,6 @@
       },
     },
     methods: {
-        viewDay ({ date }) {
-          this.start = date
-            this.type = 'day'
-        },
         getEventColor (event) {
             return event.color
         },
@@ -211,8 +207,8 @@
             ? `${a.getFullYear()}-${a.getMonth() + 1}-${a.getDate()} ${a.getHours()}:${a.getMinutes()}`
             : `${a.getFullYear()}-${a.getMonth() + 1}-${a.getDate()}`
         },
-        routeToEntry () {
-            this.$router.push('/PersonalEntry')
+        routeToEntry ({ date }) {
+            this.$router.push({name: 'PersonalEntry', params: { entryDate: date } })
             return
         }
     }

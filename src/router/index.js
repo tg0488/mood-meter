@@ -34,8 +34,8 @@ const routes = [
         component: PersonalLog
     },
     {
-        path: '/PersonalEntry',
-            name: 'PersonalEntry',
+        path: '/PersonalEntry/:entryDate',
+        name: 'PersonalEntry',
         component: PersonalEntry
     },
     {
@@ -67,4 +67,3 @@ const router = new VueRouter({
 })
 
 export default router
-
