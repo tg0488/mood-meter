@@ -12,9 +12,12 @@
             <v-row>
                 <v-col cols="12">
                         <v-expansion-panels light>
-                            <v-expansion-panel v-for="(item, i) in teamInfo[selectedTeam]" :key="i">
+                            <v-expansion-panel v-for="(item, i) in teams[selectedTeam]" :key="i">
                                 <v-expansion-panel-header>{{i}}</v-expansion-panel-header>
-                                <v-expansion-panel-content>{{item}}</v-expansion-panel-content>
+                                <v-expansion-panel-content>
+                                    {{item.color}} <br>
+                                    {{item.word}}
+                                </v-expansion-panel-content>
                             </v-expansion-panel>
                         </v-expansion-panels>
                 </v-col>
@@ -36,10 +39,6 @@
     export default {
         name: "TeamResponses",
         props: {
-            teamInfo: {
-                type: Object,
-                required: false
-            },
             selectedTeam: {
                 type: String,
                 required: false
@@ -47,6 +46,12 @@
         },
         mounted(){
             this.onTeamResponsesPage();
+            this.checkTeams();
+        },
+        computed: {
+            teams() {
+                return this.$store.getters.getYourTeams;
+            }
         },
         data (){
             return{
@@ -58,6 +63,9 @@
         methods: {
             onTeamResponsesPage: function(){
                 this.$emit('toggleTabLock', true);
+            },
+            checkTeams: function(){
+                console.log(this.teams);
             }
         }
     }

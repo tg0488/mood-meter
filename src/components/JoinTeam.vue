@@ -54,26 +54,27 @@
                 var curTeamMembers = this.$store.getters.getTeamMembers(teamJoinCode);
                 var allTeams = this.$store.getters.getAllTeams;
                 for(var key in allTeams){
-                    if(key == name){
+                    if(key == teamJoinCode){
                         validname = true;
                         break;
                     }
                 }
+                if(!validname){
+                    console.log('Team ' + teamJoinCode + ' does not exist');
+                    return 0
+                }
                 var yourTeams = this.$store.getters.getYourTeams;
                 for(var k in yourTeams){
-                    if(k == name){
+                    if(k == teamJoinCode){
                         validname = false;
                         console.log('You are already on team ' + teamJoinCode);
                         break;
                     }
                 }
-                if(validname) {
-                    this.$store.dispatch('joinTeam', teamJoinCode, curTeamMembers);
-                    this.console.log('Team ' + teamJoinCode + ' has been joined');
+                if(validname){
+                    this.$store.dispatch('joinTeam', {'teamName':teamJoinCode, 'teamMembers':curTeamMembers});
+                    console.log('Team ' + teamJoinCode + ' has been joined');
                     this.$emit('newTeamJoined')
-                }
-                else {
-                    console.log('Team ' + teamJoinCode + ' does not exists');
                 }
             }
         }

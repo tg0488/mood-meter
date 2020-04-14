@@ -47,7 +47,6 @@
     export default {
         name: "CreateTeam",
         props:[
-            'teams'
         ],
         computed: {
             yourTeams() {
@@ -99,13 +98,12 @@
                     console.log('No Team Name inputted')
                 }
                 if(validname) {
-                    var updatedTeams = this.teams;
                     var newTeam = {};
                     for(var i in this.members){
                         newTeam[this.members[i]] = 'No Response Yet'
                     }
-                    updatedTeams[name] = newTeam;
-                    this.$store.dispatch('addTeam',name, newTeam);
+                    console.log(newTeam);
+                    this.$store.dispatch('addTeam', {'teamName': name, 'teamMembers': newTeam});
                     console.log('Team ' + name + ' has been created');
                     this.$emit('newTeamAdded');
                 }

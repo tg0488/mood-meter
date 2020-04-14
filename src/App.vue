@@ -33,9 +33,9 @@ export default {
 
     components: {
     },
-
     data: () => ({
-        tabsLocked: false
+        tabsLocked: false,
+        tab: 'Journal'
     }),
     methods: {
         toggleTabsLocked: function(value){

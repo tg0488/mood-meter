@@ -14,26 +14,32 @@
         <v-row wrap style="width: 100%">
           <v-col cols="12">
               <v-overlay absolute :value="createTeamOverlay">
-                <create-team :teams="teamInfo" v-on:closeCreateTeamOverlay="toggleCreateTeamOverlay" v-on:newTeamAdded="newTeamAdded"></create-team>
+                <create-team v-on:closeCreateTeamOverlay="toggleCreateTeamOverlay" v-on:newTeamAdded="newTeamAdded"></create-team>
               </v-overlay>
               <v-overlay absolute :value="joinTeamOverlay">
-                <join-team v-on:closeJoinTeamOverlay="toggleJoinTeamOverlay"></join-team>
+                <join-team v-on:closeJoinTeamOverlay="toggleJoinTeamOverlay" v-on:newTeamJoined="newTeamJoined"></join-team>
+              </v-overlay>
+              <v-overlay absolute :value="pickAColorOverlay" style="width: 100%; height: 100%;">
+                <team-pick-a-color :selectedTeam="selectedTeam" v-on:closePickAColorOverlay="togglePickAColorOverlay"></team-pick-a-color>
+              </v-overlay>
+              <v-overlay absolute :value="pickAWordOverlay" style="width: 100%; height: 100%;">
+                <team-pick-a-word :selectedTeam="selectedTeam" v-on:closePickAWordOverlay="togglePickAWordOverlay"></team-pick-a-word>
               </v-overlay>
           </v-col>
           <v-col cols="5">
             <v-select v-model="selectedTeam" :items="teamNames" label="Choose a Team:" outlined></v-select>
           </v-col>
           <v-col cols="12">
-            <v-btn class="team_share_buttons" outlined x-large to="/Journal">Share A Word</v-btn>
+            <v-btn class="team_share_buttons" outlined x-large @click="togglePickAWordOverlay(true)">Share A Word</v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn class="team_share_buttons" outlined x-large to="/Journal">Share A Color</v-btn>
+            <v-btn class="team_share_buttons" outlined x-large @click="togglePickAColorOverlay(true)">Share A Color</v-btn>
           </v-col>
           <v-col cols="12">
             <v-btn class="team_share_buttons" outlined x-large to="/WrittenJournal">Share A Journal</v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn class="team_share_buttons" outlined x-large :to="{name:'TeamResponses', params: {teamInfo: teamInfo, selectedTeam: selectedTeam}}">View Team Responses</v-btn>
+            <v-btn class="team_share_buttons" outlined x-large :to="{name:'TeamResponses', params: {selectedTeam: selectedTeam}}">View Team Responses</v-btn>
           </v-col>
         </v-row>
     </v-layout>
@@ -43,11 +49,15 @@
 <script>
     import JoinTeam from '../../components/JoinTeam'
     import CreateTeam from '../../components/CreateTeam'
+    import TeamPickAColor from "../../components/Team/TeamPickAColor";
+    import TeamPickAWord from "../../components/Team/TeamPickAWord";
     export default {
         name: "TeamHome",
         props: {
         },
         components: {
+            TeamPickAColor,
+            TeamPickAWord,
             JoinTeam,
             CreateTeam
         },
@@ -80,7 +90,9 @@
               teamNames: [],
               selectedTeam: 'Team 1',
               joinTeamOverlay: false,
-              createTeamOverlay: false
+              createTeamOverlay: false,
+              pickAColorOverlay: false,
+              pickAWordOverlay: false
           }
         },
         methods: {
@@ -95,6 +107,14 @@
             },
             toggleCreateTeamOverlay: function(value){
                 this.createTeamOverlay = value;
+                this.onTeamHomePageOverlay(value);
+            },
+            togglePickAColorOverlay: function(value){
+                this.pickAColorOverlay = value;
+                this.onTeamHomePageOverlay(value);
+            },
+            togglePickAWordOverlay:function(value){
+                this.pickAWordOverlay = value;
                 this.onTeamHomePageOverlay(value);
             },
             newTeamAdded: function(){
