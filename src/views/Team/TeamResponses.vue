@@ -50,25 +50,9 @@
         },
         data (){
             return{
-                // teamInfo: {
-                //     'Team 1': {
-                //         'Taylor Grant': "No response yet",
-                //         'Zach Tucker': "No response yet",
-                //         'Dan Murray': "No response yet"
-                //     },
-                //     'Team 2': {
-                //         'Connor': "No response yet",
-                //         'Carter': "No response yet",
-                //         'Menz': "No response yet",
-                //     },
-                //     'Team 3': {
-                //         "Yasmine Elglaly": "No response yet"
-                //     }
-                // },
                 teamNames: ['Team 1', 'Team 2', 'Team 3'],
-                // selectedTeam: 'Team 1',
                 overlayValue: true,
-                overlayAbsolute: true
+                overlayAbsolute: true,
             }
         },
         methods: {

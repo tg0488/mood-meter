@@ -14,7 +14,7 @@
         <v-row wrap style="width: 100%">
           <v-col cols="12">
               <v-overlay absolute :value="createTeamOverlay">
-                <create-team :teams="teamInfo" v-on:closeCreateTeamOverlay="toggleCreateTeamOverlay" v-on:addNewTeam="addNewTeam"></create-team>
+                <create-team :teams="teamInfo" v-on:closeCreateTeamOverlay="toggleCreateTeamOverlay" v-on:newTeamAdded="newTeamAdded"></create-team>
               </v-overlay>
               <v-overlay absolute :value="joinTeamOverlay">
                 <join-team v-on:closeJoinTeamOverlay="toggleJoinTeamOverlay"></join-team>
@@ -37,23 +37,12 @@
           </v-col>
         </v-row>
     </v-layout>
-    <v-layout>
-      <v-row>
-        <v-col cols="2"></v-col>
-        <v-col cols="8">
-          <v-btn class="team_share_buttons" outlined rounded x-large to="/">Back</v-btn>
-        </v-col>
-        <v-col cols="2"></v-col>
-      </v-row>
-    </v-layout>
-
   </v-container>
 </template>
 
 <script>
     import JoinTeam from '../../components/JoinTeam'
     import CreateTeam from '../../components/CreateTeam'
-    import {mapState} from 'vuex'
     export default {
         name: "TeamHome",
         props: {
@@ -66,9 +55,11 @@
             this.onTeamHomePage();
             this.readTeamsFromStore();
         },
-        computed: mapState({
-            teams: state => state.teams.yourTeams
-        }),
+        computed: {
+            teams() {
+                return this.$store.getters.getYourTeams;
+            }
+        },
         data (){
           return{
               teamInfo: {
@@ -96,7 +87,7 @@
             readTeamsFromStore: function(){
                 var teamNames = this.getAllTeamNames(this.teams);
                 this.teamNames = teamNames;
-                this.selectedTeam = this.teamNames[0];
+                this.selectedTeam = this.teamNames[1];
             },
             toggleJoinTeamOverlay: function(value){
                 this.joinTeamOverlay = value;
@@ -106,11 +97,13 @@
                 this.createTeamOverlay = value;
                 this.onTeamHomePageOverlay(value);
             },
-            addNewTeam: function(value){
-                this.teamInfo = value;
-                this.teamNames = this.getAllTeamNames(this.teamInfo);
+            newTeamAdded: function(){
+                this.teamNames = this.getAllTeamNames(this.teams);
                 this.toggleCreateTeamOverlay(false);
-                // console.log(this.teamInfo);
+            },
+            newTeamJoined: function(){
+                this.teamNames = this.getAllTeamNames(this.teams);
+                this.toggleJoinTeamOverlay(false);
             },
             getAllTeamNames: function(teamDict){
                 var name = [] ;

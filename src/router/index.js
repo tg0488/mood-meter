@@ -7,8 +7,6 @@ import PersonalLog from '../views/PersonalLog'
 import PersonalEntry from '../views/PersonalEntry'
 import TeamHome from '../views/Team/TeamHome'
 import TeamResponses from '../views/Team/TeamResponses'
-import JoinTeam from '../views/Team/JoinTeam'
-import CreateTeam from '../views/Team/CreateTeam'
 
 Vue.use(VueRouter);
 
@@ -50,18 +48,7 @@ const routes = [
     component: TeamResponses,
     props: true
   },
-  {
-    path: "/JoinTeam",
-    name: "JoinTeam",
-    component: JoinTeam
-  },
-  {
-    path: "/CreateTeam",
-    name: "CreateTeam",
-    component: CreateTeam
-  }
 ];
-
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
