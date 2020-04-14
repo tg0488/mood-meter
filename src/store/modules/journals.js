@@ -9,6 +9,7 @@ const state = {
 const mutations = {
     ADD_JOURNAL(state, journal){
         state.Journals[state.Journals.length] = journal
+        //Journal ID is the number of journals currently in the store
     }
 };
 

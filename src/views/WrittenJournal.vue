@@ -42,14 +42,15 @@ export default {
   props: {
     journal: {
       color: String,
-      word: String
+      word: String,
+      default: function() {
+        return {
+          color: '',
+          word: '',
+        }
+      }
     }
   },
-data(){
-  return {
-    textcontent: ''
-  }
-},
 methods: {
     submit: function() {
       var today = new Date();
