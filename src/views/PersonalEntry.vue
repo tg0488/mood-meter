@@ -29,7 +29,7 @@
             </b>
         </v-row>
         <v-row >
-            <v-btn large outlined to="PersonalLog">
+            <v-btn large outlined to="/PersonalLog">
                 Back
             </v-btn>
         </v-row>
