@@ -98,14 +98,14 @@
       events: [
           {
               name: '1 Log entry',
-              start: '2020-01-01'
+              start: '2020-04-01'
           }
       ],
       dark: false,
       startMenu: false,
-      start: '2020-01-12',
+      start: '2020-04-01',
       endMenu: false,
-      end: '2020-01-27',
+      end: '2020-04-30',
       nowMenu: false,
       minWeeks: 1,
       now: null,
