@@ -25,6 +25,9 @@
               <v-overlay absolute :value="pickAWordOverlay" style="width: 100%; height: 100%;">
                 <team-pick-a-word :selectedTeam="selectedTeam" v-on:closePickAWordOverlay="togglePickAWordOverlay"></team-pick-a-word>
               </v-overlay>
+              <v-overlay absolute :value="fullJournalOverlay" style="width: 100%; height: 100%;">
+                  <team-full-journal :selectedTeam="selectedTeam" v-on:closeFullJournalOverlay="toggleFullJournalOverlay"></team-full-journal>
+              </v-overlay>
           </v-col>
           <v-col cols="5">
             <v-select v-model="selectedTeam" :items="teamNames" label="Choose a Team:" outlined></v-select>
@@ -36,7 +39,7 @@
             <v-btn class="team_share_buttons" outlined x-large @click="togglePickAColorOverlay(true)">Share A Color</v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn class="team_share_buttons" outlined x-large to="/WrittenJournal">Share A Journal</v-btn>
+            <v-btn class="team_share_buttons" outlined x-large @click="toggleFullJournalOverlay(true)">Share A Journal</v-btn>
           </v-col>
           <v-col cols="12">
             <v-btn class="team_share_buttons" outlined x-large :to="{name:'TeamResponses', params: {selectedTeam: selectedTeam}}">View Team Responses</v-btn>
@@ -51,11 +54,13 @@
     import CreateTeam from '../../components/CreateTeam'
     import TeamPickAColor from "../../components/Team/TeamPickAColor";
     import TeamPickAWord from "../../components/Team/TeamPickAWord";
+    import TeamFullJournal from "../../components/Team/TeamFullJournal";
     export default {
         name: "TeamHome",
         props: {
         },
         components: {
+            TeamFullJournal,
             TeamPickAColor,
             TeamPickAWord,
             JoinTeam,
@@ -92,7 +97,8 @@
               joinTeamOverlay: false,
               createTeamOverlay: false,
               pickAColorOverlay: false,
-              pickAWordOverlay: false
+              pickAWordOverlay: false,
+              fullJournalOverlay: false
           }
         },
         methods: {
@@ -116,6 +122,10 @@
             togglePickAWordOverlay:function(value){
                 this.pickAWordOverlay = value;
                 this.onTeamHomePageOverlay(value);
+            },
+            toggleFullJournalOverlay: function(value){
+                this.fullJournalOverlay = value;
+                this.onTeamHomePageOverlay(value)
             },
             newTeamAdded: function(){
                 this.teamNames = this.getAllTeamNames(this.teams);

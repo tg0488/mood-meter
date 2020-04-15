@@ -15,8 +15,10 @@
                             <v-expansion-panel v-for="(item, i) in teams[selectedTeam]" :key="i">
                                 <v-expansion-panel-header>{{i}}</v-expansion-panel-header>
                                 <v-expansion-panel-content>
-                                    {{item.color}} <br>
-                                    {{item.word}}
+                                    <v-card :color="item.color" style="min-height: 10px">
+                                        {{item.word}}
+                                    </v-card>
+                                    {{item.written}}
                                 </v-expansion-panel-content>
                             </v-expansion-panel>
                         </v-expansion-panels>

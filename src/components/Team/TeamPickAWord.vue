@@ -1,6 +1,6 @@
 <template>
-    <v-container style="width: 100%; height: 100%;">
-        <v-card class="pa-3" light>
+    <v-container sstyle="width: 90vh; height: 75vh">
+        <v-card class="pa-3" light style="width: 100%; height: 100%;">
             <v-layout>
                 <v-row style="width:100%" no-gutters>
                     <v-col cols="6">
@@ -55,7 +55,7 @@
                 journal: {
                     word: '',
                     color: '',
-                    journal: ''
+                    written: ''
                 },
                 rwords: ['Enraged','Panicked','Stressed','Jittery','Shocked','Livid','Furious','Frustrated','Tense','Stunned','Fuming','Frightened','Angry','Nervous','Restless','Repulsed','Troubled','Concerned','Uneasy','Peeved'],
                 bwords: ['Disgusted','Glum','Disappointed','Down','Apathetic','Pessimistic','Morose','Discouraged','Sad','Bored','Alienated','Miserable','Lonely','Disheartened','Tired','Despondent','Depressed','Sullen','Exhausted','Fatigued'],

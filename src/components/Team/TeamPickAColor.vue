@@ -1,6 +1,6 @@
 <template>
-    <v-container style="width: 100%; height: 100%;">
-        <v-card class="pa-3" light>
+    <v-container style="width: 90vh; height: 75vh">
+        <v-card class="pa-3" light style="width: 100%; height: 100%;">
             <v-layout>
                 <v-row style="width:100%">
                     <v-col cols="12">
@@ -43,7 +43,7 @@
                 journal: {
                     color: '______',
                     word: '',
-                    journal: ''
+                    written: ''
                 }
             }
         },
@@ -77,6 +77,5 @@
         margin-right: 10%;
         font-size: medium;
         text-align: center;
-
     }
 </style>
