@@ -1,39 +1,64 @@
 <template>
     <v-container>
         <v-layout style="white-space: pre-line;">
+            <v-col>
             <v-row>
-                <v-col cols="12">
-                    <h1>January 2</h1>
-                    <v-divider></v-divider>
-                </v-col>
-                <v-col class="pt-0" cols="12">
-                    <div style="height:100%; width: 100%; background-color: blue;">
-                        <h2 style="color: white;">Tired</h2>
-                    </div>
-                </v-col>
-                <v-col cols="12">
-                    <h3>Entry</h3>
-                    <b>
-                        I did not get enough sleep last night and have not had coffee.
-                        I have too much work to do to relax and need to talk to my
-                        professors about the issues I am having.
-                    </b>
-                </v-col>
+                <h1>
+                    {{chosenEntry[0]}}
+                </h1>
             </v-row>
-        </v-layout>
-        <v-layout>
-            <v-row style="width:100%;" justify="space-around">
-                <v-col cols="6">
-                    <v-btn style="width:90%; margin-left:5%; margin-right:5%;" large outlined to="PersonalLog">Back</v-btn>
-                </v-col>
-            </v-row>
+            <v-divider>
+            </v-divider>
+            <v-row>
+            <h2 :style="{ color : '#' + chosenEntry[1] }">
+                {{chosenEntry[2]}}
+            </h2>
+        </v-row>
+            <v-row>
+            <h3>
+                Entry
+            </h3>
+        </v-row>
+        <v-row>
+            <b>
+                {{chosenEntry[3]}}
+                <!--I did not get enough sleep last night and have not had coffee.
+                I have too much work to do to relax and need to talk to my
+                professors about the issues I am having.-->
+
+            </b>
+        </v-row>
+        <v-row >
+            <v-btn large outlined to="PersonalLog">
+                Back
+            </v-btn>
+        </v-row>
+            </v-col>
         </v-layout>
     </v-container>
 </template>
 
 <script>
     export default {
-        name: "PersonalEntry"
+        name: "PersonalEntry",
+        mounted() {
+            this.entryPicker()
+        },
+        data() {
+            return {
+                entryList: [['Date','a1beef','Angry','My boss yelled at me for not cleaning up the sink. I need to relax.'],
+                ['Date','11d','Tired','I woke up late today. I need to go to bed earlier.'],
+                ['Date','ea0','Elated','I love my new assignment. It provides many interesting problems for me to solve.'],
+                ['Date','183','Calm','The day is going well so far and I am content with my current assignment.']],
+                chosenEntry: ['','','','']
+            }
+        },
+        methods: {
+            entryPicker: function(){
+                var chosenNumber = Math.floor(Math.random() * this.entryList.length);
+                this.chosenEntry = this.entryList[chosenNumber]
+            }
+        }
     }
 </script>
 
